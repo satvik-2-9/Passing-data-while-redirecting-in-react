@@ -1,25 +1,29 @@
-import React,{useState} from 'react'
-import {Redirect} from 'react-router-dom'
-import pp from './pp'
+import React from 'react'
+import {Link} from 'react-router-dom'
 
 
 function Home() {
-    const [p, setp] = useState("ff");
-    function g() {
-  
-        <Redirect
+  /* function g() {
+    window.location.href = "./pp";
+      return (<Redirect
         to={{
-          pathname: "/pp",
-          state: { id: pp }
+          path: "/pp",
+          state: { verifier_id: 2 }
         }}
       />
-    }
-    
+    )
+  };
+     */
 
     return (
         <div>
-            <h1>hi</h1>
-            <button onClick={g} >click me</button>
+        <h1>hi</h1>
+        <Link to={{
+          pathname: "/next",
+          state:{id:5}
+          }}>
+           hit it !
+        </Link>
         </div>
     )
 }
